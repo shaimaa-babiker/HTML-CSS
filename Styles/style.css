@@ -214,3 +214,36 @@ a {
     font-size: 1.5rem;
   }
 }
+
+/*inputs*/
+
+.input {
+  outline: none;
+  padding: 1.5rem 2.5rem;
+  border: 2px solid #ccc;
+  color: #2584ff;
+  border-radius: 30px;
+  font-size: 2rem;
+}
+
+.input-group {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  display: flex;
+}
+.input-group .input {
+  border: 0;
+  flex-grow: 1;
+  padding: 1.5rem 2rem;
+}
+.input-group .btn {
+  margin: 4px;
+}
+::placeholder {
+  color: #cdcbd7;
+}
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 1.4rem;
+  }
+}
