@@ -26,6 +26,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 h1 {
@@ -183,7 +184,15 @@ a {
   text-transform: uppercase;
   white-space: nowrap;
   text-align: center;
+  outline: 0;
   margin: 1rem 0;
+}
+
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 .btn--primary {
   background-color: #1b0760;
@@ -232,7 +241,7 @@ a {
 
 .input {
   outline: none;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 2rem;
   border: 2px solid #ccc;
   color: #2584ff;
   border-radius: 30px;
@@ -598,5 +607,55 @@ a {
   }
   .Nav__item {
     border: none;
+  }
+}
+/*heros*/
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+.hero__taglaine {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero_img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__content {
+    text-align: left;
+    align-self: center;
+  }
+  .hero {
+    padding-top: 0;
+  }
+}
+/*Domain block*/
+
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+.block-domain--prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-items: center;
+}
+@media screen and (min-width: 768px) {
+
+  .block-domain--prices {
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+
+
   }
 }
