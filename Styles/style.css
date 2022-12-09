@@ -578,7 +578,6 @@ a {
   text-align: center;
   margin-bottom: 4rem;
   color: #1b0760;
-
 }
 
 .container {
@@ -690,11 +689,11 @@ a {
 /* plans block */
 
 .block-plans .grid {
-  gap: 4rem;
+  gap: 5rem;
 }
 
 .block-plans .card {
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
 }
 /*features*/
