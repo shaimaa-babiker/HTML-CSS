@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 /*Topography*/
+::selection {
+  background-color: #0261dd;
+  color: #fff;
+}
 html {
   font-size: 62.5%; /* 10px */
 }
@@ -38,6 +42,7 @@ h2 {
 }
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 p {
   margin-top: 0;
@@ -122,7 +127,6 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
-  color: #1b0760;
 }
 
 .list--inline .list__item {
@@ -133,6 +137,7 @@ a {
 .list--tick {
   list-style-image: url(../Images/tick.svg);
   padding-left: 3rem;
+  color: #1b0760;
 }
 
 .list--tick .list__item {
@@ -180,7 +185,7 @@ a {
   cursor: pointer;
   font-size: 1.8rem;
   font-size: 600;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   text-transform: uppercase;
   white-space: nowrap;
   text-align: center;
@@ -257,6 +262,7 @@ a {
   border: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
+  width: 0;
 }
 .input-group .btn {
   margin: 4px;
@@ -280,16 +286,22 @@ a {
   overflow: hidden;
 }
 
+.card--primary .badge--primary {
+  background: #0261dd;
+}
 .card__header,
 .card__body {
   padding: 2rem 3rem;
 }
 
 .card--primary .card__header {
-  background-color: #1b0760;
+  background-color: #126de4;
   color: #fff;
 }
 
+.plan--popular {
+  transform: scale(1.1);
+}
 .card--secoundery .card__header {
   background-color: #00d9ff;
   color: #fff;
@@ -335,6 +347,17 @@ a {
 .plan--popular .card__header {
   position: relative;
 }
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
+}
+
+.plan {
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
 @media screen and(min-width:1024px) {
   .plan__name {
     font-size: 1.5rem;
@@ -355,6 +378,7 @@ a {
 }
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 .media__body {
   margin: 0 2rem;
@@ -535,12 +559,14 @@ a {
   color: #7b857b;
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: #fff;
 }
 
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 90%);
   padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 .block--skewed-left {
@@ -550,6 +576,9 @@ a {
 
 .block__header {
   text-align: center;
+  margin-bottom: 4rem;
+  color: #1b0760;
+
 }
 
 .container {
@@ -643,19 +672,121 @@ a {
 }
 .block-domain--prices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
   max-width: 700px;
   margin: 0 auto;
   justify-items: center;
+  color: #1b0760;
 }
 @media screen and (min-width: 768px) {
-
   .block-domain--prices {
-    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
 
+/* plans block */
 
+.block-plans .grid {
+  gap: 4rem;
+}
+
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+/*features*/
+.feature--image {
+  width: 100%;
+}
+.feature-header {
+  color: #1b0760;
+  margin-top: 1rem;
+}
+.feature__content {
+  gap: 4rem 2rem;
+  margin-top: 10rem;
+}
+.feature__content:first-of-type {
+  margin-top: 6rem;
+}
+/*Showcase Block*/
+
+.block-showcase__image {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+  .block-showcase__image {
+    width: auto;
+    max-width: 700px;
+    justify-self: end;
+  }
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+.footer__copyright {
+  font-size: 2.1rem;
+  color: #fff;
+  opacity: 0.3;
+}
+.footer a {
+  color: #777;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__section {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  .footer__section .list {
+    margin: 0;
+  }
+
+  .footer__brand img {
+    width: 100%;
+    max-width: 230px;
+  }
+
+  .footer .collapsible__chevron {
+    display: none;
+  }
+  .footer .collapsible__content {
+    max-height: 100%;
+    opacity: 1;
+  }
+  .footer__brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+  .footer__section {
+    border: 0;
+  }
+
+  .footer__heading {
+    font-size: 1.6rem;
   }
 }
